@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Contacts from './components/Contacts';
 import Header from './components/Header';
 
-import { Provider } from './context'
+import { Provider } from './context';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -17,7 +17,7 @@ class App extends Component {
             <Contacts  />
           </div>        
         </div>
-      </Provider>  
+      </Provider> 
     );
   }
 }
