@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
-export default function About() {
-    return (
-        <div>
-            <h1 className="display-4">About page</h1>
-        </div>
-    )
-}
+const About = props => {
+  return (
+    <div>
+      <h1 className="display-4">About page</h1>
+      <p>Eita {props.match.params.id}</p>
+    </div>
+  );
+};
+
+export default About;
