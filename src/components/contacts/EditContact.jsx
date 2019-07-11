@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import Context from "../../context";
-import uuid from "uuid";
 import TextInputGroup from "../layout/TextInputGroup";
 
 import axios from "axios";
 
-class AddContact extends Component {
+class EditContact extends Component {
   state = {
     id: "",
     name: "",
@@ -38,17 +37,6 @@ class AddContact extends Component {
       return;
     }
 
-    const newContact = {
-      name,
-      email,
-      phone,
-      errors: {}
-    };
-
-    const res = await axios.post(`https://jsonplaceholder.typicode.com/users/`, newContact);
-
-    dispatch({ type: "ADD_CONTACT", payload: res.data })
-
     this.setState({
       name: "",
       email: "",
@@ -66,7 +54,7 @@ class AddContact extends Component {
           const { dispatch } = value;
           return (
             <div className="card mb-3">
-              <div className="card-header">Add Contact</div>
+              <div className="card-header">Edit Contact</div>
               <div className="card-body">
                 <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                   <TextInputGroup
@@ -101,7 +89,7 @@ class AddContact extends Component {
                   />
                   <input
                     type="submit"
-                    value="Add Contact"
+                    value="Edit Contact"
                     className="btn btn-light btn-block"
                   />
                 </form>
@@ -114,4 +102,4 @@ class AddContact extends Component {
   }
 }
 
-export default AddContact;
+export default EditContact;

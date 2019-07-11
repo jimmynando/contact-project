@@ -68,8 +68,7 @@ class AddContact extends Component {
                         </div>
                         <input type="submit" value="Add Contact" className="btn btn-light btn-block"/>
                     </form>
-                </div>
-                                
+                </div>                                
             </div>
         )
     }
